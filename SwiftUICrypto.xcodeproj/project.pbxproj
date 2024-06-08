@@ -9,16 +9,24 @@
 /* Begin PBXBuildFile section */
 		C7BCCB442C12A0CE00B9D2A2 /* SwiftUICryptoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BCCB432C12A0CE00B9D2A2 /* SwiftUICryptoApp.swift */; };
 		C7BCCB462C12A0CE00B9D2A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BCCB452C12A0CE00B9D2A2 /* ContentView.swift */; };
-		C7BCCB482C12A0CF00B9D2A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7BCCB472C12A0CF00B9D2A2 /* Assets.xcassets */; };
 		C7BCCB4B2C12A0CF00B9D2A2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7BCCB4A2C12A0CF00B9D2A2 /* Preview Assets.xcassets */; };
+		C7BCCB522C12A11900B9D2A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7BCCB512C12A11900B9D2A2 /* Assets.xcassets */; };
+		C7BCCB572C12A17100B9D2A2 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BCCB562C12A17100B9D2A2 /* Color.swift */; };
+		C7BCCB5C2C12A1C700B9D2A2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BCCB5B2C12A1C700B9D2A2 /* HomeView.swift */; };
+		C7BCCB602C12A31300B9D2A2 /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BCCB5F2C12A31300B9D2A2 /* CircleButtonView.swift */; };
+		C7BCCB622C12AD4D00B9D2A2 /* CircleButtonAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BCCB612C12AD4D00B9D2A2 /* CircleButtonAnimationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C7BCCB402C12A0CE00B9D2A2 /* SwiftUICrypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUICrypto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7BCCB432C12A0CE00B9D2A2 /* SwiftUICryptoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUICryptoApp.swift; sourceTree = "<group>"; };
 		C7BCCB452C12A0CE00B9D2A2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		C7BCCB472C12A0CF00B9D2A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7BCCB4A2C12A0CF00B9D2A2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C7BCCB512C12A11900B9D2A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../Downloads/Resources/Assets.xcassets; sourceTree = "<group>"; };
+		C7BCCB562C12A17100B9D2A2 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		C7BCCB5B2C12A1C700B9D2A2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		C7BCCB5F2C12A31300B9D2A2 /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
+		C7BCCB612C12AD4D00B9D2A2 /* CircleButtonAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonAnimationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +59,11 @@
 		C7BCCB422C12A0CE00B9D2A2 /* SwiftUICrypto */ = {
 			isa = PBXGroup;
 			children = (
+				C7BCCB582C12A1A000B9D2A2 /* Core */,
+				C7BCCB532C12A13000B9D2A2 /* Extensions */,
 				C7BCCB432C12A0CE00B9D2A2 /* SwiftUICryptoApp.swift */,
 				C7BCCB452C12A0CE00B9D2A2 /* ContentView.swift */,
-				C7BCCB472C12A0CF00B9D2A2 /* Assets.xcassets */,
+				C7BCCB512C12A11900B9D2A2 /* Assets.xcassets */,
 				C7BCCB492C12A0CF00B9D2A2 /* Preview Content */,
 			);
 			path = SwiftUICrypto;
@@ -65,6 +75,64 @@
 				C7BCCB4A2C12A0CF00B9D2A2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C7BCCB532C12A13000B9D2A2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C7BCCB562C12A17100B9D2A2 /* Color.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C7BCCB582C12A1A000B9D2A2 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C7BCCB5D2C12A2E400B9D2A2 /* Components */,
+				C7BCCB592C12A1A600B9D2A2 /* Home */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C7BCCB592C12A1A600B9D2A2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C7BCCB632C12B4F800B9D2A2 /* Models */,
+				C7BCCB5A2C12A1AE00B9D2A2 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C7BCCB5A2C12A1AE00B9D2A2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C7BCCB5B2C12A1C700B9D2A2 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C7BCCB5D2C12A2E400B9D2A2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C7BCCB5E2C12A30200B9D2A2 /* CircleButton */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C7BCCB5E2C12A30200B9D2A2 /* CircleButton */ = {
+			isa = PBXGroup;
+			children = (
+				C7BCCB5F2C12A31300B9D2A2 /* CircleButtonView.swift */,
+				C7BCCB612C12AD4D00B9D2A2 /* CircleButtonAnimationView.swift */,
+			);
+			path = CircleButton;
+			sourceTree = "<group>";
+		};
+		C7BCCB632C12B4F800B9D2A2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7BCCB4B2C12A0CF00B9D2A2 /* Preview Assets.xcassets in Resources */,
-				C7BCCB482C12A0CF00B9D2A2 /* Assets.xcassets in Resources */,
+				C7BCCB522C12A11900B9D2A2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +206,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7BCCB462C12A0CE00B9D2A2 /* ContentView.swift in Sources */,
+				C7BCCB5C2C12A1C700B9D2A2 /* HomeView.swift in Sources */,
 				C7BCCB442C12A0CE00B9D2A2 /* SwiftUICryptoApp.swift in Sources */,
+				C7BCCB602C12A31300B9D2A2 /* CircleButtonView.swift in Sources */,
+				C7BCCB572C12A17100B9D2A2 /* Color.swift in Sources */,
+				C7BCCB622C12AD4D00B9D2A2 /* CircleButtonAnimationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,11 +346,12 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUICrypto/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Crypto Tracker";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,11 +375,12 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUICrypto/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Crypto Tracker";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
