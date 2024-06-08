@@ -15,7 +15,7 @@ struct CircleButtonView: View {
             .foregroundColor(Color.theme.accent)
             .frame(width: 50, height: 50)
             .background(Color.theme.background)
-            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+            .clipShape(Circle())
             .shadow(
                 color: Color.theme.accent.opacity(0.4),
                 radius: 5
