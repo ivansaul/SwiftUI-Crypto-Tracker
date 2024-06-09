@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject private var homeVM: HomeViewModel
     @State private var showPortfolio: Bool = false
 
     var body: some View {
@@ -19,6 +20,18 @@ struct HomeView: View {
             // Content Layer
             VStack {
                 homeHeader
+
+                rowTitles
+
+                if showPortfolio {
+                    portfolioCoinsList
+                        .transition(.move(edge: .trailing))
+                }
+                if !showPortfolio {
+                    allCoinsList
+                        .transition(.move(edge: .leading))
+                }
+
                 Spacer()
             }
         }
@@ -30,6 +43,7 @@ struct HomeView: View {
         HomeView()
             .navigationBarHidden(true)
     }
+    .environmentObject(HomeViewModel())
 }
 
 extension HomeView {
@@ -53,5 +67,43 @@ extension HomeView {
                 }
         }
         .padding(.horizontal)
+    }
+
+    private var portfolioCoinsList: some View {
+        List(homeVM.portfolioCoins) { coin in
+            CoinRowView(
+                coin: coin,
+                showHoldingsColum: true
+            )
+            .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 10))
+        }
+        .listStyle(.plain)
+    }
+
+    private var allCoinsList: some View {
+        List(homeVM.allCoins) { coin in
+            CoinRowView(
+                coin: coin,
+                showHoldingsColum: false
+            )
+            .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 10))
+        }
+        .listStyle(.plain)
+    }
+
+    private var rowTitles: some View {
+        HStack {
+            Text("Coins")
+            Spacer()
+            if showPortfolio {
+                Text("Holdings")
+            }
+            Text("Price")
+                .frame(minWidth: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
+        }
+        .font(.caption)
+        .foregroundStyle(Color.theme.secondaryText)
+        .padding(.horizontal)
+        .padding(.top, 10)
     }
 }
