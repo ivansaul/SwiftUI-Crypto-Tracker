@@ -25,7 +25,21 @@ class HomeViewModel: ObservableObject {
     }
 
     private func addSubscribers() {
-        self.dataService.$allCoins
+        self.$searchText
+            .combineLatest(self.dataService.$allCoins)
+            .debounce(for: .seconds(0.5), scheduler: DispatchSerialQueue.main)
+            .map { text, startingCoins in
+                if text.isEmpty {
+                    return startingCoins
+                }
+                let lowecaseText = text.lowercased()
+
+                return startingCoins.filter { coin in
+                    coin.name.contains(lowecaseText)
+                        || coin.id.contains(lowecaseText)
+                        || coin.symbol.contains(lowecaseText)
+                }
+            }
             .sink { [weak self] returnedCoins in
                 self?.allCoins = returnedCoins
             }
