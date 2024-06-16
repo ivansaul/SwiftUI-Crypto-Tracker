@@ -9,8 +9,8 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject private var homeVM: HomeViewModel
-    @State private var showPortfolio: Bool = false
-
+    @State private var showPortfolio: Bool = false // for animate to right
+    @State private var showPortfolioView: Bool = false // for show a sheet
     var body: some View {
         ZStack {
             // Background Layer
@@ -20,6 +20,8 @@ struct HomeView: View {
             // Content Layer
             VStack {
                 homeHeader
+
+                HomeStatsView(showPorfolio: $showPortfolio)
 
                 SearchBarView(searchText: $homeVM.searchText)
 
