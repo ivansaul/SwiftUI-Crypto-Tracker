@@ -22,6 +22,7 @@ struct HomeView: View {
                 homeHeader
 
                 HomeStatsView(showPorfolio: $showPortfolio)
+                    .padding(.top)
 
                 SearchBarView(searchText: $homeVM.searchText)
 

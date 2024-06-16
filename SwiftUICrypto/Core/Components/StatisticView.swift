@@ -11,7 +11,7 @@ struct StatisticView: View {
     let stat: StatisticModel
     var body: some View {
         let percentageChange = stat.percentageChange ?? 0
-        VStack(spacing: 5) {
+        VStack(alignment: .leading, spacing: 5) {
             Text(stat.title)
                 .font(.caption)
                 .foregroundStyle(Color.theme.secondaryText)
