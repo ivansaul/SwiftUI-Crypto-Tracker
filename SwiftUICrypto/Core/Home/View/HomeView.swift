@@ -16,6 +16,16 @@ struct HomeView: View {
             // Background Layer
             Color.theme.background
                 .ignoresSafeArea()
+                .sheet(
+                    isPresented: $showPortfolioView,
+                    onDismiss: {
+                        showPortfolioView = false
+                    },
+                    content: {
+                        PortfolioView()
+                            .environmentObject(homeVM)
+                    }
+                )
 
             // Content Layer
             VStack {
@@ -55,6 +65,11 @@ extension HomeView {
     private var homeHeader: some View {
         HStack {
             CircleButtonView(iconName: showPortfolio ? "plus" : "info")
+                .onTapGesture {
+                    if showPortfolio {
+                        showPortfolioView.toggle()
+                    }
+                }
                 .background(CircleButtonAnimationView(animate: $showPortfolio))
             Spacer()
             Text(showPortfolio ? "Portfolio" : "Live Prices")
