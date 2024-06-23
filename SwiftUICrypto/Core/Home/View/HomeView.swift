@@ -120,10 +120,22 @@ extension HomeView {
             }
             Text("Price")
                 .frame(minWidth: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
+            reloadDataButton
         }
         .font(.caption)
         .foregroundStyle(Color.theme.secondaryText)
         .padding(.horizontal)
         .padding(.top, 10)
+    }
+
+    private var reloadDataButton: some View {
+        Button(action: {
+            withAnimation(.linear(duration: 1)) {
+                homeVM.reloadData()
+            }
+        }, label: {
+            Image(systemName: "arrow.clockwise")
+                .rotationEffect(Angle(degrees: homeVM.isLoading ? 360 : 0), anchor: .center)
+        })
     }
 }
