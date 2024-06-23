@@ -88,6 +88,7 @@ class HomeViewModel: ObservableObject {
         self.isLoading = true
         self.coinDataService.getCoins()
         self.marketDataService.getMarketData()
+        HapticManager.notification(type: .success)
     }
 
     private func mapMarketData(marketData: MarketDataModel?, portfolioCoins: [CoinModel]) -> [StatisticModel] {

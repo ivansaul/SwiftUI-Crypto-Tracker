@@ -98,6 +98,9 @@ extension HomeView {
             .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 10))
         }
         .listStyle(.plain)
+        .refreshable {
+            onReloadData()
+        }
     }
 
     private var allCoinsList: some View {
@@ -109,6 +112,9 @@ extension HomeView {
             .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 10))
         }
         .listStyle(.plain)
+        .refreshable {
+            onReloadData()
+        }
     }
 
     private var rowTitles: some View {
@@ -129,13 +135,15 @@ extension HomeView {
     }
 
     private var reloadDataButton: some View {
-        Button(action: {
-            withAnimation(.linear(duration: 1)) {
-                homeVM.reloadData()
-            }
-        }, label: {
+        Button(action: onReloadData, label: {
             Image(systemName: "arrow.clockwise")
                 .rotationEffect(Angle(degrees: homeVM.isLoading ? 360 : 0), anchor: .center)
         })
+    }
+
+    private func onReloadData() {
+        withAnimation(.linear(duration: 1)) {
+            homeVM.reloadData()
+        }
     }
 }
