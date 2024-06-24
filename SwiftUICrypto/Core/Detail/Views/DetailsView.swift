@@ -81,7 +81,7 @@ extension DetailsView {
     }
 
     private var aditionalDetailsSection: some View {
-        VStack {
+        VStack(alignment: .leading) {
             Text("Aditional Details".uppercased())
                 .font(.title)
                 .fontWeight(.bold)
@@ -95,6 +95,37 @@ extension DetailsView {
                     StatisticView(stat: stat)
                 }
             })
+
+            if let stringURL = detailVM.websiteURL, let url = URL(string: stringURL) {
+                Link(destination: url, label: {
+                    HStack {
+                        Image(systemName: "network")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 20, height: 20)
+                        Text("Website")
+                            .font(.headline)
+                    }
+                    .foregroundStyle(.blue)
+
+                })
+            }
+
+            if let stringURL = detailVM.subredditURL, let url = URL(string: stringURL) {
+                Link(destination: url, label: {
+                    HStack {
+                        Image("reddit-icon")
+                            .renderingMode(.template)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 20, height: 20)
+                        Text("Reddit")
+                            .font(.headline)
+                    }
+                    .foregroundStyle(.blue)
+
+                })
+            }
         }
     }
 
