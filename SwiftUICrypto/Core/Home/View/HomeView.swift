@@ -11,6 +11,7 @@ struct HomeView: View {
     @EnvironmentObject private var homeVM: HomeViewModel
     @State private var showPortfolio: Bool = false // for animate to right
     @State private var showPortfolioView: Bool = false // for show a sheet
+    @State private var showSettingsView: Bool = false
     var body: some View {
         ZStack {
             // Background Layer
@@ -30,6 +31,9 @@ struct HomeView: View {
             // Content Layer
             VStack {
                 homeHeader
+                    .sheet(isPresented: $showSettingsView, content: {
+                        SettingsView()
+                    })
 
                 HomeStatsView(showPorfolio: $showPortfolio)
                     .padding(.top)
@@ -68,6 +72,8 @@ extension HomeView {
                 .onTapGesture {
                     if showPortfolio {
                         showPortfolioView.toggle()
+                    } else {
+                        showSettingsView.toggle()
                     }
                 }
                 .background(CircleButtonAnimationView(animate: $showPortfolio))
