@@ -11,6 +11,7 @@ import Foundation
 class CoinDetailViewModel: ObservableObject {
     @Published var overviewStatistics: [StatisticModel] = []
     @Published var aditionalStatistics: [StatisticModel] = []
+    @Published var coinDescription: String? = nil
 
     private let coinDetailDataService: CoinDetailDataService
 
@@ -31,6 +32,12 @@ class CoinDetailViewModel: ObservableObject {
                 self?.overviewStatistics = returnedOverviewStats
                 self?.aditionalStatistics = returnedAditionalStats
             })
+            .store(in: &self.cancellables)
+
+        self.coinDetailDataService.$coinDetail
+            .sink { [weak self] coinDetailModel in
+                self?.coinDescription = coinDetailModel?.readableDescription
+            }
             .store(in: &self.cancellables)
     }
 

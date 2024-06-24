@@ -113,6 +113,9 @@ struct CoinDetailModel: Codable, Identifiable {
     let description: Description?
     let links: Links?
     let genesisDate: String?
+    var readableDescription: String? {
+        return description?.en?.removeHTMLOccurances()
+    }
 
     enum CodingKeys: String, CodingKey {
         case id
