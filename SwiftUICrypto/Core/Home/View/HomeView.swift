@@ -110,6 +110,9 @@ extension HomeView {
                 showHoldingsColum: false
             )
             .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 10))
+            .background(
+                lazyNavigationLink(coin: coin)
+            )
         }
         .listStyle(.plain)
         .refreshable {
@@ -145,5 +148,10 @@ extension HomeView {
         withAnimation(.linear(duration: 1)) {
             homeVM.reloadData()
         }
+    }
+
+    private func lazyNavigationLink(coin: CoinModel) -> some View {
+        NavigationLink("", destination: LazyView(DetailsView(coin: coin)))
+            .opacity(0) // Just to hide navigation right arrow
     }
 }
