@@ -113,6 +113,18 @@ struct CoinDetailModel: Codable, Identifiable {
     let description: Description?
     let links: Links?
     let genesisDate: String?
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case symbol
+        case name
+        case webSlug = "web_slug"
+        case blockTimeInMinutes = "block_time_in_minutes"
+        case hashingAlgorithm = "hashing_algorithm"
+        case description
+        case links
+        case genesisDate = "genesis_date"
+    }
 }
 
 struct Description: Codable {
