@@ -18,18 +18,21 @@ struct DetailsView: View {
     }
 
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             VStack {
-                // TODO: Implement ChartView
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(.gray.opacity(0.3))
-                    .frame(height: 250)
+                ChartView(coin: detailVM.coin)
+                    .frame(height: 300)
                 overViewSection
                 aditionalDetailsSection
             }
             .padding(.horizontal)
         }
         .navigationTitle(detailVM.coin.name)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                topBarTrailingItems
+            }
+        }
     }
 }
 
@@ -73,6 +76,17 @@ extension DetailsView {
                     StatisticView(stat: stat)
                 }
             })
+        }
+    }
+
+    private var topBarTrailingItems: some View {
+        HStack {
+            Text(detailVM.coin.symbol.uppercased())
+                .font(.title3)
+                .fontWeight(.bold)
+                .foregroundStyle(Color.theme.secondaryText)
+            CoinImageView(coin: detailVM.coin)
+                .frame(height: 30)
         }
     }
 }
