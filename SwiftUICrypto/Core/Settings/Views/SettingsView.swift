@@ -65,12 +65,12 @@ extension SettingsView {
                     .font(.callout)
                     .fontWeight(.medium)
                     .foregroundStyle(Color.theme.accent)
-                if let url = URL(string: Constants.coingeckoUrl) {
-                    Link("Visit CoinGecko", destination: url)
-                        .foregroundStyle(.blue)
-                }
             }
             .padding(.vertical)
+            if let url = URL(string: Constants.coingeckoUrl) {
+                Link("Visit CoinGecko", destination: url)
+                    .foregroundStyle(.blue)
+            }
         } header: {
             Text("CoinGecko")
         }
@@ -87,31 +87,38 @@ extension SettingsView {
                     .font(.callout)
                     .fontWeight(.medium)
                     .foregroundStyle(Color.theme.accent)
-                HStack(spacing: 20) {
-                    if let url = URL(string: Constants.githubProjectURL) {
-                        Link(destination: url, label: {
-                            Image("github-icon")
-                                .renderingMode(.template)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 25, height: 25)
-                        })
-                    }
-                    if let url = URL(string: Constants.discordDevURL) {
-                        Link(destination: url, label: {
-                            Image("discord-icon")
-                                .renderingMode(.template)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 30, height: 30)
-                        })
-                    }
-                }
-                .frame(maxWidth: .infinity, alignment: .center)
-                .foregroundStyle(.blue)
-                .padding(.top)
             }
             .padding(.vertical)
+            if let url = URL(string: Constants.githubProjectURL) {
+                Link(destination: url, label: {
+                    HStack {
+                        Image("github-icon")
+                            .renderingMode(.template)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 25, height: 25)
+                        Text("Github")
+                    }
+                })
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .foregroundStyle(.blue)
+            }
+            if let url = URL(string: Constants.discordDevURL) {
+                Link(destination: url, label: {
+                    HStack {
+                        Image("discord-icon")
+                            .renderingMode(.template)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 30, height: 30)
+                        Text("Discord")
+                    }
+
+                })
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .foregroundStyle(.blue)
+            }
+
         } header: {
             Text("Developer")
         }
