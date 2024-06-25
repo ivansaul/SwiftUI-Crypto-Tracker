@@ -24,9 +24,6 @@ class HomeViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
 
     init() {
-        self.allCoins.append(DeveleperPreview.instance.coin)
-        self.allCoins.append(DeveleperPreview.instance.coin)
-        self.portfolioCoins.append(DeveleperPreview.instance.coin)
         self.addSubscribers()
     }
 
