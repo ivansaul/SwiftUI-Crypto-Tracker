@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct SwiftUICryptoApp: App {
     @StateObject private var homeVM = HomeViewModel()
+    @State private var showLounchView: Bool = true
 
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [
@@ -22,11 +23,20 @@ struct SwiftUICryptoApp: App {
 
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                HomeView()
-                    .navigationBarHidden(true)
+            ZStack {
+                NavigationView {
+                    HomeView()
+                        .navigationBarHidden(true)
+                }
+                .environmentObject(homeVM)
+                ZStack {
+                    if showLounchView {
+                        LounchView(showLounchView: $showLounchView)
+                            .transition(.opacity)
+                    }
+                }
+                .zIndex(2.0)
             }
-            .environmentObject(homeVM)
         }
     }
 }
