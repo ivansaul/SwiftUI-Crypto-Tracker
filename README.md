@@ -61,3 +61,23 @@ This project follows **`Model View ViewModel(MVVM)`** architecture principles fo
 This app was created following a tutorial on YouTube by [Swiftful Thinking][swiftfulthinking]. Swiftful Thinking is the BEST place to learn SwiftUI. Highly recommend.
 
 [swiftfulthinking]: https://www.youtube.com/c/SwiftfulThinking
+
+## Notes
+
+### Corrupted `.xcodeproj` file
+
+If the `.xcodeproj` file is missing or corrupted, you can regenerate it using [XcodeGen](https://github.com/yonaskolb/XcodeGen), a tool that generates your Xcode project from a simple YAML specification.
+
+Install XcodeGen:
+
+```bash
+brew install xcodegen
+```
+
+Generate the Xcode project:
+
+```bash
+xcodegen generate
+```
+
+This will recreate the `.xcodeproj` file based on the `project.yml` configuration.
