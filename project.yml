@@ -1,0 +1,15 @@
+
+name: SwiftUICrypto
+options:
+  bundleIdPrefix: com.ivansaul
+targets:
+  SwiftUICrypto:
+    type: application
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources: [SwiftUICrypto]
+    info:
+      path: SwiftUICrypto/Info.plist
+      properties:
+        UILaunchScreen:
+          UIScene: {}
